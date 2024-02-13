@@ -1,0 +1,261 @@
+.main {
+  width: 100%;
+  height: 100vh;
+}
+html{
+  background-color: black;
+  height: 100vh;
+}
+
+
+video {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  object-fit: cover;
+}
+
+.ENTER {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover {
+  color: rgb(227, 21, 52);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.justify-content-end {
+  position: relative;
+  float: right;
+
+
+}
+
+.resturant-search input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.resturant-search button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+.mainOverly{
+  opacity: 0.8;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.main-search{
+  background-image: url('../src/assets/pexels-phumlani-nangu.jpg');
+  background-position: center;
+  background-size:cover;
+  height: 100vh;
+  width: 100vw;
+
+}
+.user-signin-img{
+  background-image: url('../src/assets/pexels-viktoria-alipatova.jpg');
+  background-position: center;
+  background-size:cover;
+  height: 100vh;
+  width: 100vw;
+}
+.resturant-signin-img {
+  background-image: url('../src/assets/pexels-rene-asmussen-2544829.jpg');
+  background-position: center;
+  background-size:cover;
+  height: 100vh;
+  width: 100vw;
+}
+.resturant-signup-img {
+  background-image: url('../src/assets/pexels-karolina-grabowska.jpg');
+  background-position: center;
+  background-size:cover;
+  height: 100vh;
+  width: 100vw;
+}
+.user-signup-img {
+  background-image: url('../src/assets/pexels-ryutaro-tsukata.jpg');
+  background-position: center;
+  background-size:cover;
+  height: 100vh;
+  width: 100vw;
+}
+.usersignupOverly{
+  opacity: 0.6;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.userOverly{
+  opacity: 0.8;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.restLoginOverly{
+  opacity: 0.8;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.restsignupOverly{
+  opacity: 0.6;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.justify-content-end {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 5%;
+  right: 0%;
+  -ms-transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%); 
+  display: flex;
+  flex-direction: column;
+}
+
+.restuarnt-searchMain{
+  
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.resturant-search{
+  display: flex;
+  flex-direction:row;
+}
+.restSearch{
+  color: white;
+}
+.loginHeader{
+  color: white;
+}
+.resturantloginheader{
+  color: white;
+}
+.user-login{
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.resturant-login{
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.restaurantsignup{
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.usersignup{
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-user{
+  display: flex;
+  flex-direction:column;
+}
+.resturantlogin-user{
+  display: flex;
+  flex-direction:column;
+}
+
+.resturantSignup-form input{
+  width:350px;
+  height: 30px
+}
+.login-user input{
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+}
+.userLoginh1{
+  color: white;
+}
+.restSignupheader{
+  padding-top: 50px;
+  color: white;
+}
+.userSignup{
+  padding-top: 50px;
+  color: white;
+}
