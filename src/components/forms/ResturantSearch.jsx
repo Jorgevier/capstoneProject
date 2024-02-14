@@ -1,25 +1,34 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 export default function ResturantSearch() {
-  const apiKey='UFsV8qMiUjyNOF7l7Iv4g4cEwuSN3oZRdfWa2uzZABS74vEX8EA6gxoFA2m_Sw-s0aRR6H0zqvMP40sL5ZqazCK-4xKpx0ntSxz-oC_rFV8-0P9HmQir_kgHXZDKZXYx';
-  const apiUrl='https://api.yelp.com/v3/events/awesome-event'
 
-  function getRestaurantInfo(){
+  const apiUrl='https://api.yelp.com/v3/businesses/search?'
+  const [zip, setZip] = useState('07208')
+  const [submitted, setSubmitted] = useState(false)
+  const [category, setCategory] = useState('')
+  const [miles, setMiles] = useState('')
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      // 'Access-Control-Allow-Origin': '*' ,
+      Authorization: 'Bearer TVioWvYyqlIMLJ6QnNNXDMQBM3A_0Ka1ZuM3NUrT8R9CMs2y8yogw8lGUh7gGGPmpgeH4MQbYEeWHuA9dJRDDEJEoJlS-ycSD7uuLTpiIU6bF-8fJZYD7SMBEt7LZXYx'
+    }, 
+    mode:"no-cors"
+  };
     
-    useEffect(() => {
-      const fetchData = async() => {
-        const result = await fetch(apiUrl)
-        result.json().then(json =>{
-          console.log(json);
-        })
-      }
-      fetchData();
-    }, []);
-  }
+  useEffect(() => {
+    if (submitted) {
+    
+      fetch(apiUrl + 'location=' + {zip} + '&categories=restaurants&sort_by=best_match&limit=20', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+    };
+    }, [submitted]);
+  
   function handleSubmit(e){
     e.preventDefault()
-    registerUser()
-    console.log(user, 'form submitted');
-    setUser({'':''})
+    setSubmitted(true)
 }
 
 
@@ -28,13 +37,13 @@ export default function ResturantSearch() {
     <div className="restuarnt-searchMain">
         <h1 className="restSearch"> Restaurant Search</h1>
         <form action='' id='resturant-search' className="resturant-search" onSubmit={handleSubmit} >
-            {/* add onSubmit={pass} - once you do the code */}
+        
             <label htmlFor="nameOrType"></label>
-            <input type="text" name='nameOrType' placeholder="Name or type of food" /><br />
+            <input type="text" value={category} onChange={e => setCategory(e.target.value)} name='nameOrType' placeholder="Name or type of food" /><br />
             <label htmlFor="zip"></label>
-            <input type="text" name='zip' placeholder="zip code" /><br />
+            <input type="text" name='zip' value={zip} onChange={e => setZip(e.target.value)} placeholder="zip code" /><br />
             <label htmlFor="distance"></label>
-            <input type="text" name='miles' placeholder="miles" /><br />
+            <input type="text" name='miles'value={miles} onChange={e => setMiles(e.target.value)} placeholder="miles" /><br />
             <button type="submit" value={'search'}>Submit</button>
 
         </form>
