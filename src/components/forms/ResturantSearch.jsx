@@ -6,32 +6,48 @@ export default function ResturantSearch() {
   const [submitted, setSubmitted] = useState(false)
   const [category, setCategory] = useState('')
   const [miles, setMiles] = useState('')
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      // 'Access-Control-Allow-Origin': '*' ,
-      Authorization: 'Bearer TVioWvYyqlIMLJ6QnNNXDMQBM3A_0Ka1ZuM3NUrT8R9CMs2y8yogw8lGUh7gGGPmpgeH4MQbYEeWHuA9dJRDDEJEoJlS-ycSD7uuLTpiIU6bF-8fJZYD7SMBEt7LZXYx'
-    }, 
-    mode:"no-cors"
-  };
-    
-  useEffect(() => {
-    if (submitted) {
-    
-      fetch(apiUrl + 'location=' + {zip} + '&categories=restaurants&sort_by=best_match&limit=20', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
-    };
-    }, [submitted]);
+  const [restaurantData, setRestaurantData] = useState(null)
   
   function handleSubmit(e){
     e.preventDefault()
-    setSubmitted(true)
 }
+  const reqInfo = async()=>{
+    let options = {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json',
+         }, 
+      body:JSON.stringify({zip:zip, category:category, miles:miles })
+    };
+    const data = await fetch ('http://127.0.0.1:5000/getyelp', options)
+    .then(response => response.json())
+    .catch(err => console.error(err));
+    console.log(data)
+    setRestaurantData(data)
+  }
 
-
+function GetSearchResults(){
+  const restaurantComponents = []
+  for (let i = 0; i < 5; i++){
+    restaurantComponents.push(restaurantResult(i))
+  }
+  return (
+    <div>
+      {restaurantComponents}
+    </div>
+  )
+}
+function restaurantResult(i){
+  let restaurant = restaurantData.businesses[i]
+  return (
+    <div className="searchResults">
+      <h4 className="restaurantName">{restaurant.name}</h4>
+      <h6 className="restaurantAddress">{restaurant.location.display_address}</h6>
+      <h6 className="restaurantTel">{restaurant.display_phone}</h6>
+      <h6 className="restaurantType">{restaurant.categories[0].title}</h6><br/>
+  </div>
+  )
+}
 
   return (
     <div className="restuarnt-searchMain">
@@ -44,9 +60,10 @@ export default function ResturantSearch() {
             <input type="text" name='zip' value={zip} onChange={e => setZip(e.target.value)} placeholder="zip code" /><br />
             <label htmlFor="distance"></label>
             <input type="text" name='miles'value={miles} onChange={e => setMiles(e.target.value)} placeholder="miles" /><br />
-            <button type="submit" value={'search'}>Submit</button>
+            <button type="submit" value={'search'} onClick={reqInfo}>Submit</button>
 
         </form>
+        {restaurantData && <GetSearchResults/>}
     </div>
   )
 }

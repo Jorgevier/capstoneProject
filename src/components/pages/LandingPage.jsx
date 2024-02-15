@@ -1,7 +1,7 @@
 import Header from "../Header"
 import ResturantSearch from "../forms/ResturantSearch"
 
-export default function LandingPage() {
+export default function LandingPage({}) {
   return (
     //api key 
   // Client ID

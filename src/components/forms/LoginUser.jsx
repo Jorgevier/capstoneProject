@@ -44,6 +44,7 @@ export default function LoginUser({ updateUser}) {
         <Nav className="userCreate" activeKey="/home">
             <Nav.Link href= '/createanaccount'>Create an account</Nav.Link>
             <Nav.Link href="/forgotaccountinfo">forgot username/password</Nav.Link>
+            <Nav.Link href="/userportal">DEMO</Nav.Link>
         </Nav>
 
     </form>

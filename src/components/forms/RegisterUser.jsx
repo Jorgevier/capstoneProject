@@ -35,7 +35,7 @@ export default function RegisterUser() {
             <input type='text' name='username' value={user.username} placeholder="username" onChange={(e) => setUser({...user, 'username': e.target.value})} required/><br/>
             <label htmlFor="password"></label><br/>
             <input type='password' name='password' value={user.password} placeholder="password" onChange={(e) => setUser({...user, 'password': e.target.value})} required/><br/><br/>
-            <input type="submit" value={'create my account'} /><br/>
+            <input type="submit" href= '/userportal' value={'create my account'} /><br/>
         </form>
     </div>
   )

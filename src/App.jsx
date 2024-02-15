@@ -22,6 +22,8 @@ import ResturantSearch from "./components/forms/ResturantSearch"
 import ResturantSignIn from "./components/pages/ResturantSignIn"
 import UserSignUp from "./components/pages/UserSignUp"
 import { ToastContainer } from "react-toastify"
+import UserPortal from "./components/pages/UserPortal"
+import RestaurantPortal from "./components/pages/RestaurantPortal"
 
 
 export default function App() {
@@ -30,7 +32,6 @@ export default function App() {
 <Container fluid data-bs-theme='dark' className='app'>
     <Routes>
         <Route path="/" element={<Intro>
-          <Intro/>
         </Intro>}/>
         <Route path="/landingpage" element={<LandingPage>
           
@@ -44,6 +45,10 @@ export default function App() {
         </ResturantSignUp>}/>
         <Route path="/createanaccount" element={<UserSignUp>
         </UserSignUp>}/>
+        <Route path="/userportal" element={<UserPortal>
+        </UserPortal>}/>
+        <Route path="/restaurantportal" element={<RestaurantPortal>
+        </RestaurantPortal>}/>
 
     </Routes>
 </Container>
