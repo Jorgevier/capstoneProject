@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 export default function ResturantSearch() {
 
   const apiUrl='https://api.yelp.com/v3/businesses/search?'
-  const [zip, setZip] = useState('07208')
+  const [zip, setZip] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [category, setCategory] = useState('')
   const [miles, setMiles] = useState('')

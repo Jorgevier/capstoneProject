@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+
 export default function RegisterUser() {
     const [user, setUser] =useState({first_name:'', last_name:'', email:'', username:'', password:''})
 

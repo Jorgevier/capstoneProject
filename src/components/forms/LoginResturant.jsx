@@ -17,7 +17,7 @@ export default function LoginResturant() {
     }
     useEffect(()=>{
         if(userState.username){
-            navigate('/')
+            navigate('/restaurantportal')
         } 
     },[])
         
